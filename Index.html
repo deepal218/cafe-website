@@ -11,67 +11,135 @@
     <link rel="shortcut icon" type="image" href="./image/logo.phg">
 </head>
 <style>
-  *{
-      margin: 0px;
-      padding: 0px;
-      box-sizing: border-box;
-      font-family: sans-serif;
-  }
-  .contact{
-      min-height: 100vh;
-      background-color: #141313aa;
-      padding: 50px;
-      text-align: center;
-  }
-  .container{
-      max-width: 800px;
-      margin: 0 auto;
-  }
-  .container h2{
-      font-size:36px;
-      margin-bottom: 40px;
-      color: #333;
-  }
-  .contact-wrapper{
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      grid-gap: 30px;
-  }
-  .contact-form{
-      text-align: left;
-  }
-  .contact-form h3{
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #333;
-  }
-  .form-group{
-      margin-bottom: 20px;
-  }
-  input,textarea{
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      background-color: #f8f9fa;
-      color: #333;
-  }
-  input:focus,textarea:focus{
-      outline: none;
-      box-shadow: 0 0 8px #bbb;
-  }
-  button{
-      display: inline-block;
-      padding: 12px 24 px;
-      background-color: #4caf50;
-      color:#fff;
-      border:none;
-      cursor: pointer;
-  }
-</style>
-<h1 class="text-center"> THE COFFEE CLUB</h1>
-<header>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+}
+header .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+.navbar .logo span {
+  color: #C06B3E;
+}
+.navbar .menu-links {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+.navbar a {
+  color: #141313;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+.navbar a:hover {
+  color: #121212;
+}
+
+.hero-section .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  color: #0e0e0edf;
+}
+.hero-section .content h2 {
+  font-size: 3rem;
+  max-width: 600px;
+  line-height: 70px;
+}
+.hero-section .content p {
+  font-weight: 300;
+  max-width: 600px;
+  margin-top: 15px;
+}
+.hero-section .content button {
+  background: #0e87d2;
+  padding: 12px 30px;
+  border: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  margin-top: 38px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+#close-menu-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  display: none;
+
+@media (max-width: 768px) {
+  header {
+    padding: 10px;
+  }
+  header.show-mobile-menu::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+  }
+  .navbar .logo {
+    font-size: 1.7rem;
+  }
+    
+  #hamburger-btn, #close-menu-btn {
+    display: block;
+  }
+  .navbar .menu-links {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background: #0e0e0e;
+    flex-direction: column;
+    padding: 70px 40px 0;
+    transition: left 0.2s ease;
+  }
+  header.show-mobile-menu .navbar .menu-links {
+    left: 0;
+  }
+  .navbar a {
+    color: #eae6e6;
+  }
+  .hero-section .content {
+    text-align: center;
+  }
+  .hero-section .content :is(h2, p) {
+    max-width: 100%;
+  }
+  .hero-section .content h2 {
+    font-size: 2.3rem;
+    line-height: 60px;
+  }
+  
+  .hero-section .content button {
+    padding: 9px 18px;
+  }
+}
+
+</style>
+<header>
+  <h1 class="text-center"> THE COFFEE CLUB</h1>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="Index.html">Navbar</a>
